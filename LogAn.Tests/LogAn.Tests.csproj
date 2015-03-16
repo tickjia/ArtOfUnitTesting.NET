@@ -33,6 +33,9 @@
     <Reference Include="nunit.framework">
       <HintPath>..\..\NUnit\nunit-2.6.4\NUnit-2.6.4\bin\framework\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\RhinoMocks\rhino-mocks-master\Rhino.Mocks.GettingStarted\Documentation\lib\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,6 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogMailAnalyzer\LogMailAnalyzerTests.cs" />
+    <Compile Include="Mock\RihnoMockLogRecorderTests.cs" />
+    <Compile Include="Mock\LogRecorderTests.cs" />
+    <Compile Include="Mock\MockLogFileChecker.cs" />
+    <Compile Include="RhinoMock\RhinoMockReturnStubTests.cs" />
+    <Compile Include="Stub\LogAnalyzerWithoutStubTests.cs" />
+    <Compile Include="Stub\LogAnalyzerWithoutStubTestSubstitute.cs" />
     <Compile Include="Stub\LogAnalyzerVTests.cs" />
     <Compile Include="Stub\TestableLogAnalyzerV.cs" />
     <Compile Include="Stub\TestableLogAnalyzerVTests.cs" />

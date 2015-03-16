@@ -19,6 +19,12 @@
   <wsdl:message name="ITimeService_GetAllTime_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllTimeResponse" />
   </wsdl:message>
+  <wsdl:message name="ITimeService_AddLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLog" />
+  </wsdl:message>
+  <wsdl:message name="ITimeService_AddLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLogResponse" />
+  </wsdl:message>
   <wsdl:portType name="ITimeService">
     <wsdl:operation name="GetTime">
       <wsdl:input wsaw:Action="http://tempuri.org/ITimeService/GetTime" message="tns:ITimeService_GetTime_InputMessage" />
@@ -27,6 +33,10 @@
     <wsdl:operation name="GetAllTime">
       <wsdl:input wsaw:Action="http://tempuri.org/ITimeService/GetAllTime" message="tns:ITimeService_GetAllTime_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITimeService/GetAllTimeResponse" message="tns:ITimeService_GetAllTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITimeService/AddLog" message="tns:ITimeService_AddLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITimeService/AddLogResponse" message="tns:ITimeService_AddLog_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ITimeService" type="tns:ITimeService">
@@ -42,6 +52,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllTime">
       <soap:operation soapAction="http://tempuri.org/ITimeService/GetAllTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLog">
+      <soap:operation soapAction="http://tempuri.org/ITimeService/AddLog" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

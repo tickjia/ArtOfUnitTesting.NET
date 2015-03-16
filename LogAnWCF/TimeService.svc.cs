@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -12,6 +13,25 @@ namespace LogAnWCF
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class TimeService : ITimeService
     {
+        const string logFileName = "c:\\a.txt";
+        private void WriteALog(string message)
+        {
+            using (FileStream fs = new FileStream(logFileName, FileMode.Create, FileAccess.Write, FileShare.ReadWrite))
+            {
+                using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
+                {
+                    sw.WriteLine(string.Format("{0:yy-MM-dd HH:mm:ss}\t{1}", DateTime.Now, message));
+                    sw.Close();
+                }
+                fs.Close();
+            }
+        }
+
+        public void AddLog(string message)
+        {
+            WriteALog(message);
+        }
+
         public GlobalDateTime GetAllTime()
         {
             GlobalDateTime times = new GlobalDateTime();

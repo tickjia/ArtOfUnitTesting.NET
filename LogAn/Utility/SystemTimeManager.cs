@@ -44,7 +44,12 @@ namespace LogAn.Utility
 
         public DateTime GetNow()
         {
-            throw new NotImplementedException();
+            return _service.GetTime();
+        }
+
+        public void AddLog(string message)
+        {
+            _service.AddLog(message);
         }
     }
 }

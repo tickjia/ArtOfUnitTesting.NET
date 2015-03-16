@@ -11,19 +11,18 @@ namespace LogAn
         IExtensionManager _extManager = new FileExtensionManager();
         ISystemTimeManager _timeManager = new SystemTimeManager();
 
-#if DEBUG
-
-        public LogAndTimeAnalyzer()
-        {
-        }
-
-
-        public LogAndTimeAnalyzer(IExtensionManager extManager,ISystemTimeManager timeManager)
+        //在AssemblyInfo.cs增加内部函数的可见程序集 "LogAn.Tests"
+        internal LogAndTimeAnalyzer(IExtensionManager extManager, ISystemTimeManager timeManager)
         {
             this._extManager = extManager;
             this._timeManager = timeManager;
         }
 
+#if DEBUG
+
+        public LogAndTimeAnalyzer()
+        {
+        }
         public IExtensionManager ExtensionManager
         {
             get { return _extManager; }

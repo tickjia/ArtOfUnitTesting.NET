@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ArtOfUnitTesting
+namespace LogAn.LogMailAnalyzer
 {
-    public class Class1
+    public interface IWebService
     {
+        DateTime GetTime();
     }
 }

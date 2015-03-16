@@ -41,12 +41,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="LogMailAnalyzer\IMailSender.cs" />
+    <Compile Include="LogMailAnalyzer\IWebService.cs" />
+    <Compile Include="LogMailAnalyzer\LogMailAnalyzer.cs" />
+    <Compile Include="LogMailAnalyzer\MailSender.cs" />
+    <Compile Include="LogMailAnalyzer\WebService.cs" />
+    <Compile Include="Utility\IGetResults.cs" />
     <Compile Include="LogAnalyzerV.cs" />
+    <Compile Include="LogAnalyzerWithoutStub.cs" />
     <Compile Include="LogAndTimeAnalyzerF.cs" />
     <Compile Include="LogAndTimeAnalyzer.cs" />
     <Compile Include="LogAnalyzerSimple.cs" />
     <Compile Include="LogAnalyzer.cs" />
+    <Compile Include="LogRecorder.cs" />
+    <Compile Include="Utility\ILogFileChecker.cs" />
     <Compile Include="Utility\IManagerFactory.cs" />
+    <Compile Include="Utility\LogFileChecker.cs" />
     <Compile Include="Utility\ManagerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">

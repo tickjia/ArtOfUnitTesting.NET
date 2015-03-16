@@ -19,6 +19,9 @@ namespace LogAnWCF
         [OperationContract]
         GlobalDateTime GetAllTime();
 
+        [OperationContract]
+        void AddLog(string message);
+
         // TODO: Add your service operations here
     }
 

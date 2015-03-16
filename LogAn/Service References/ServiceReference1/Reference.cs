@@ -83,6 +83,9 @@ namespace LogAn.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITimeService/GetAllTime", ReplyAction="http://tempuri.org/ITimeService/GetAllTimeResponse")]
         LogAn.ServiceReference1.GlobalDateTime GetAllTime();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITimeService/AddLog", ReplyAction="http://tempuri.org/ITimeService/AddLogResponse")]
+        void AddLog(string message);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -118,6 +121,10 @@ namespace LogAn.ServiceReference1 {
         
         public LogAn.ServiceReference1.GlobalDateTime GetAllTime() {
             return base.Channel.GetAllTime();
+        }
+        
+        public void AddLog(string message) {
+            base.Channel.AddLog(message);
         }
     }
 }
